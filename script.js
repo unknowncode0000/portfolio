@@ -1,11 +1,14 @@
-const targets = document.querySelectorAll('.section-label, .split-heading, .profile-grid, .feature, .wide-visual, .system-grid, .cap-grid, .contact-box');
-targets.forEach(el => el.classList.add('reveal'));
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
+const toggle = document.querySelector('.mobile-toggle');
+const nav = document.querySelector('.navlinks');
+
+if (toggle && nav) {
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
   });
-}, { threshold: 0.12 });
-targets.forEach(el => observer.observe(el));
+
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+    });
+  });
+}
