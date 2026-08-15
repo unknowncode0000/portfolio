@@ -326,15 +326,10 @@ footer{
 }
 
 /* Scroll reveal */
-.reveal{
-  opacity:0;
-  transform:translateY(18px);
-  transition:opacity .65s ease,transform .65s ease;
-}
-
+.reveal,
 .reveal.visible{
-  opacity:1;
-  transform:none;
+  opacity:1 !important;
+  transform:none !important;
 }
 
 /* Responsive */
